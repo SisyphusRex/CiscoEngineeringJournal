@@ -1,0 +1,88 @@
+Walter Podewil
+CIS 253
+Engineering Journal
+
+Cisco Networking Basic Router & Switch Commands
+Router & Switch Modes & Prompts
+	Always check the prompt and verify that you are in the correct mode for issuing a specific command
+	Mode 							Prompt
+	User EXEC mode-------------------------------------------Router>
+	Privileged EXEC mode ------------------------------------Router#
+	Global Configuration mode ------------------------------Router(config)#
+	Interface Configuration mode --------------------------Router(config-if)#
+Erasing and Initializing a Router
+	(only needs to be done if there is an existing configuration or if you are finished working in the lab)
+	Router#erase startup-config
+	(you will need to confirm erasing NVRAM)
+	Router#reload
+	(This will clear the memory. Only needed if you are going to use the equipment otherwise just
+	turn off the router)
+Erasing and Initializing a Switch
+	(only needs to be done if there is an existing configuration or if you are finished working in the lab)
+	Switch#delete vlan.dat
+	(you will need to confirm deleting the VLAN database)
+	Switch#erase startup-config
+	(you will need to confirm erasing NVRAM)
+	Switch#reload
+	(only if you need to use the equipment or just turn off the switch)
+Entering Global Configuration Mode (on a Switch or Router)
+	Router>enable
+	(*may require a password here if one is already set)
+	Router#config t
+	Router(config)#
+	To return to privilege EXEC mode from global configuration mode type exit.
+Disabling DNS Lookup & Setting the Router Hostname (on a Switch or Router)
+	Router(config)#no ip domain-lookup
+	Router(config)#hostname [Name of router]
+Setting the Encrypted Privilege EXEC Password(on a Switch or Router)
+	Router(config)#enable secret cisco
+Console Line Password & Settings(on a Switch or Router)
+	Router(config)#line con 0
+	Router(config-line)#password [password]
+	Router(config-line)#login
+Virtual Terminal (Telnet) Line Password & Settings for Remote Access to a Router or Switch
+	Router(config)#line vty 0 4
+	Router(config-line)#password [password]
+	Router(config-line)#login
+	Router(config-line)#exit
+	Router(config)#
+Creating a Router Banner or Message-of-the-Day (MOTD) (on a Switch or Router)
+	Router(config)#banner motd “Your Message Here between quotes”
+	PRESS ENTER
+	Router(config)#
+Configuring an Ethernet Port (Routers only)
+	Router(config)#int Fa0/0 (or other interface designation)
+	Router(config-if)#ip address [ip address] [subnet mask]
+	Router(config-if)#description [interface description]
+	Router(config-if)#no shutdown
+	Router(config-if)#exit
+	Router(config)#
+Configuring a Serial Port (Routers only)
+	Router(config)#int S0/0 (or other interface designation)
+	Router(config-if)#ip address [ip address] [subnet mask]
+	Router(config-if)#description [interface description]
+	Router(config-if)#no shutdown
+	Router(config-if)#clock rate 64000 (only if DCE end of cable)
+	Router(config-if)#exit
+	Router(config)#
+Configuring an IP Address and Default Gateway on a Switch
+	Switch(config)#int vlan 1 (other interface designation)
+	Switch(config-if)#ip address [ip address] [subnet mask]
+	Switch(config-if)#no shutdown
+	Switch(config-if)#exit
+	Switch(config)#ip default-gateway [ip address of gateway]
+Saving the Configuration (on a Switch or Router)
+	Router(config)#exit
+	Router#copy run start
+View configurations (on a Switch or Router)
+	Router#show interfaces (Displays stats for all Interfaces)
+	Router#show clock (Displays system clock)
+	Router#show hosts (Displays configured hostnames & IP Address)
+	Router#show users (Displays all users connected to the router)
+	Router#show history (Displays history of commands used)
+	Router#show version (Displays info about Cisco IOS
+	Router#show startup-config (Displays Configuration saved in NVRAM
+	Router#show ip route (Displays IPv4 routing table on router)
+	Router#show arp (Displays the ARP table on router – Resolved IPv4 to MAC)
+	Router#show protocols (Displays status of configured Layer 3 protocols)
+	Router#show ipv6 route (Displays IPv6 routing table
