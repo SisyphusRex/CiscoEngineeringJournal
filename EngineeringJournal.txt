@@ -88,3 +88,5 @@ View configurations (on a Switch or Router)
 	Router#show ipv6 route (Displays IPv6 routing table
 Clear Windows ARP table:
 	arp -d
+Show windows ARP table:
+	arp -a
