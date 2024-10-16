@@ -86,6 +86,7 @@ View configurations (on a Switch or Router)
 	Router#show arp (Displays the ARP table on router – Resolved IPv4 to MAC)
 	Router#show protocols (Displays status of configured Layer 3 protocols)
 	Router#show ipv6 route (Displays IPv6 routing table
+	Router#show ip interface brief (displays summary of interfaces, ip address, status, and etc.)
 Clear Windows ARP table:
 	arp -d
 Show windows ARP table:
