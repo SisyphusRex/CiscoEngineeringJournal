@@ -93,3 +93,5 @@ Show windows ARP table:
 	arp -a
 Require encrypted remote access:
 	transport input ssh
+Encrypt all passwords:
+	Router#(config)#service password-encryption
