@@ -91,3 +91,5 @@ Clear Windows ARP table:
 	arp -d
 Show windows ARP table:
 	arp -a
+Require encrypted remote access:
+	transport input ssh
