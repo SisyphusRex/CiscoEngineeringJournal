@@ -95,3 +95,5 @@ Require encrypted remote access:
 	transport input ssh
 Encrypt all passwords:
 	Router#(config)#service password-encryption
+Set Minimum password length
+	Router#(config)# security password min-length [length]
