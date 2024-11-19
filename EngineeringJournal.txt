@@ -118,6 +118,9 @@ Establish SSH connection to router:
 	Command prompt
 	C:\>SSH -l [username] [target ip]
 	Password: [enterpassword]
+Disable unused switch ports:
+	Switch(config)# interface range F0/2-24, G0/2
+	Switch(config-if-range)# shutdown
 
 
 
