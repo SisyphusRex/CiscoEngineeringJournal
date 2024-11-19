@@ -97,3 +97,27 @@ Encrypt all passwords:
 	Router#(config)#service password-encryption
 Set Minimum password length
 	Router#(config)# security password min-length [length]
+Disable DNS lookup:
+	Router#(config)# no ip domain-lookup
+Set Domain Name:
+	Router#(config)# ip domain-name [domainname.com]
+Create User with Password
+	Router(config)#username [username] secret [password]
+Generate RSA Keys:
+	Router(config)#crypto key generate rsa
+	(choose bits 360 - 2048)
+Block anyone for three minutes who fails login after four attempts withn 2 minute period:
+	Router(config)# login block-for 180 attempts 4 within 120
+Configure all VTY lines for SSH access and use local profile for authentication:
+	Router(config)#line vty 0 4
+	Router(config-line)#transport input ssh
+	Router(config-line)#login local
+Set the EXEC mode Timeout on VTY lines
+	Router(config-line)# exec-timout [minutes]
+Establish SSH connection to router:
+	Command prompt
+	C:\>SSH -l [username] [target ip]
+	Password: [enterpassword]
+
+
+
